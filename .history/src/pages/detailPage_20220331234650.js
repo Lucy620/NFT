@@ -300,7 +300,7 @@ const renderer = ({ hours, minutes, seconds, completed }) => {
            <s.rightBox className="top24" ai={"right"}>
 			<div style={{width:'500px'}}>
 				<div className="title">{item.metaData.name}</div>
-				<div className="top8 size12 italic">#{tokenId}</div>
+				<div className="top8 size12 italic">#{item.id}</div>
 				<div className="top12 size12 color5">Owned by <span className="color-blue bold">{item.poster}</span></div>
 				<div className="top8 flex">
 					<img src={amountIcon} className="icon16"/>
