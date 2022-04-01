@@ -196,7 +196,6 @@ function Home () {
 				 id = NFTS[index + 1].id
 			 }
             return (
-			nft.id == id ?(<></>) : (	
 			  <Link style={{textDecoration: 'none'}} to={`/detail/${nft.tokenId}/${nft.id}`}>
 				 <Card
 					 bodyStyle={{padding:'12px'}}
@@ -289,7 +288,6 @@ function Home () {
 				   </Card>
 				 </Link>  
             )
-			);
           })}
       
       </s.flex_container>

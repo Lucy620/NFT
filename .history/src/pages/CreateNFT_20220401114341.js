@@ -63,7 +63,7 @@ function CreateNFT() {
       setLoading(false);
       setStatus("Error");
     }).then((receipt) => {
-	    form.resetFields();
+	  form.resetFields();
       console.log(receipt);
       console.log("list ok!");
       setLoading(false);

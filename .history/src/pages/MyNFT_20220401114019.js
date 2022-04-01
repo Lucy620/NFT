@@ -313,12 +313,7 @@ function MyNFT() {
 					<div className="font left24 top24">empty...</div>
 				) : (
 				 winNFTS.map((auction, index) => {
-					let id = 0;
-					if (index < winNFTS.length - 1) {
-						id = winNFTS[index + 1].id
-					}			
-				 	return (
-						auction.id == id ?(<></>) : (
+				 	    return (
 				 		<Card
 				 			bodyStyle={{padding:'12px'}}
 				 			key={index}
@@ -346,11 +341,10 @@ function MyNFT() {
 				 				</div>			
 				 		  </Card>
 				 	
-					 )
-					 );	
-				   })
-			 )
-		 }
+				 	    );
+				 	  })
+				)
+			}
 		  </s.flex_container>
 
           <s.SpacerSmall></s.SpacerSmall>
@@ -362,12 +356,7 @@ function MyNFT() {
 				<div className="font left24 top24">empty...</div>
 			 ) : (
 				sellNFTS.map((trade, index) => {
-					let id = 0;
-					if (index < sellNFTS.length - 1) {
-						id = sellNFTS[index + 1].id
-					}		
 					return (
-					trade.id == id ?(<></>) : (
 					<Card
 						bodyStyle={{padding:'12px'}}
 						key={index}
@@ -419,10 +408,8 @@ function MyNFT() {
 							</div>			
 					  </Card>
 				
-					)
-				);
-				})
-				
+					);
+				  })
 			 )
 		 }		  
           </s.flex_container>

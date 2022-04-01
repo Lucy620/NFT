@@ -427,8 +427,8 @@ const renderer = ({ hours, minutes, seconds, completed }) => {
 			  onCancel={handleClose1}
 				>
 				 <Form {...formItemLayout} form={form}>
-					<Form.Item label="Price(MATIC)" name="price" rules={[{ required: true }]}>
-					     <InputNumber style={{ width: 200 }} min="0.000000000000000001"  name="price" id="price"   placeholder="Enter your price"/>
+					<Form.Item label="Price" name="price" rules={[{ required: true }]}>
+					     <InputNumber style={{ width: 200 }} min="1"  name="price" id="price"   placeholder="Enter your price"/>
 					</Form.Item>
 				</Form> 
 			</Modal>
