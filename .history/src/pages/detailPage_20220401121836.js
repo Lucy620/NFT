@@ -278,9 +278,12 @@ const renderer = ({ hours, minutes, seconds, completed }) => {
       fetchNFT();  
     }, []);
 
+	useEffect(()=>{
+		console.log("change account") ;
+		
+	  },[blockchain.account]);
+
     useEffect(()=>{
-	  setButton1(false);
-	  setButton2(false);
       fetchAuction();    
     },[blockchain.account]);
 

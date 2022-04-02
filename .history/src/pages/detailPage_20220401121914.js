@@ -278,9 +278,8 @@ const renderer = ({ hours, minutes, seconds, completed }) => {
       fetchNFT();  
     }, []);
 
+
     useEffect(()=>{
-	  setButton1(false);
-	  setButton2(false);
       fetchAuction();    
     },[blockchain.account]);
 
