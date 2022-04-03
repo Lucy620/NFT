@@ -348,6 +348,7 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
 								handleShow1();
 								setID(item.id);
 								setPrice(item.price);
+								setAmount(item.amount);
 							  }}>Bid now</Button>
 							
 						) : (
@@ -369,7 +370,6 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
 								  handleShow2();
 								  setID(item.id);
 								  setPrice(item.price);
-								  setAmount(item.amount);
 								}}>Buy now</Button>
 								
 							</div>
