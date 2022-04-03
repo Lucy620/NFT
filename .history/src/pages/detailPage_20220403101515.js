@@ -102,7 +102,7 @@ const DetailPage = () => {
 const Completionist = () => <span>Auction end!</span>;
 
 // Renderer callback with condition
-const renderer = ({ days, hours, minutes, seconds, completed }) => {
+const renderer = ({ hours, minutes, seconds, completed }) => {
   if (completed) {
     // Render a completed state
 	setBidButton(false);
