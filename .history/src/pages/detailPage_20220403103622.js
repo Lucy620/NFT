@@ -207,7 +207,7 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
       setButton2(true);
      }).then(() => {
 	  alert('success!')	; 
-      window.history.back(-1);
+      window.location.back(-1);
     })
 
     };

@@ -155,6 +155,7 @@ function MyNFT() {
 	  fetchMyTokens(); 
       fetchWinTokens();
       fetchSellTokens();
+	  alert("Success!");
     })  
     
   }
@@ -329,7 +330,6 @@ function MyNFT() {
 				 		  >
 				 				<div className="flex between">
 				 					<div className="card-name bold">{auction.meta.name}</div>
-									 <div className="size12 italic">#{auction.id}</div>
 				 				</div>
 				 				<div className="flex between">
 				 					<div className="size12 card-desc">{auction.meta.description}</div>
