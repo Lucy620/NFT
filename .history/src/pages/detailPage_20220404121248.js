@@ -314,7 +314,7 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
 								<img src={ethIcon} className="icon16"/>
 								<div className="size18 bold"><div className="size18 italic bold">{blockchain.web3.utils.fromWei(auction.highestBid,'ether')} MATIC</div></div>
 							</div>
-						<div className="size12 top8 italic color5">Auction end at {endDate}</div>
+						<div className="size12 top8 italic color5">Auction end at {auction.biddingTime}</div>
 						<div className="top8 size12">
 							<Countdown
 							  date={moment(parseInt(auction.biddingTime)).format("YYYY-MM-DD HH:mm:ss")}
