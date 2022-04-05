@@ -86,7 +86,7 @@ function MyNFT() {
      data.createdTokens.forEach(async(token) => {   
         fetch(token.uri)
          .then((response) => response.json())
-         .then(async(meta) => {           
+         .then((meta) => {           
            setNFT((prevState) => [
               ...prevState,
               { id: token._itemId, meta: meta, initialSupply: token.initialSupply, publicSupply: token.publicSupply },
@@ -107,7 +107,7 @@ function MyNFT() {
      data.winTokens.forEach(async(auction) => {   
         fetch(auction.uri)
          .then((response) => response.json())
-         .then(async(meta) => {           
+         .then((meta) => {           
            setWin((prevState) => [
               ...prevState,
               { id: auction._tradeId, tokenId: auction._tokenId, meta: meta, amount: 1},

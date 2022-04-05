@@ -83,10 +83,10 @@ function MyNFT() {
   const fetchCreatedTokens = () =>{
     setNFT([]);
     
-     data.createdTokens.forEach(async(token) => {   
+     data.createdTokens.forEach((token) => {   
         fetch(token.uri)
          .then((response) => response.json())
-         .then(async(meta) => {           
+         .then((meta) => {           
            setNFT((prevState) => [
               ...prevState,
               { id: token._itemId, meta: meta, initialSupply: token.initialSupply, publicSupply: token.publicSupply },
@@ -104,10 +104,10 @@ function MyNFT() {
   const fetchWinTokens = () =>{
     setWin([]);
     
-     data.winTokens.forEach(async(auction) => {   
+     data.winTokens.forEach((auction) => {   
         fetch(auction.uri)
          .then((response) => response.json())
-         .then(async(meta) => {           
+         .then((meta) => {           
            setWin((prevState) => [
               ...prevState,
               { id: auction._tradeId, tokenId: auction._tokenId, meta: meta, amount: 1},
@@ -125,11 +125,11 @@ function MyNFT() {
   const fetchSellTokens = () =>{
     setSell([]);
     
-     data.sellingTokens.forEach(async(trade) => {   
+     data.sellingTokens.forEach((trade) => {   
         fetch(trade.uri)
          .then((response) => response.json())
-         .then(async(meta) => {   
-		   var ether_price = await blockchain.web3.utils.fromWei(trade.price,'ether')       
+         .then((meta) => {   
+		   var ether_price = blockchain.web3.utils.fromWei(trade.price,'ether')       
            setSell((prevState) => [
               ...prevState,
               { id: trade._tradeId, tokenId: trade._tokenId, meta: meta, amount: trade.amount, price: ether_price},
