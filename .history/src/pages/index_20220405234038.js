@@ -159,9 +159,9 @@ function Home () {
   useEffect(() => { 
     dispatch(connect());
   }, []);
-//   useEffect(() => { 
-// 	dispatch(fetchData(blockchain.account));
-//   }, [blockchain.account]);
+  useEffect(() => { 
+	dispatch(fetchData(blockchain.account));
+  }, [blockchain.account]);
   useEffect(() => { 
     dispatch(fetchData(blockchain.account));
   }, [blockchain.MarketPlace]);
