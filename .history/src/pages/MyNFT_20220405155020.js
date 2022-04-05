@@ -83,7 +83,7 @@ function MyNFT() {
   const fetchCreatedTokens = () =>{
     setNFT([]);
     
-     data.createdTokens.forEach(async(token) => {   
+     data.createdTokens.forEach((token) => {   
         fetch(token.uri)
          .then((response) => response.json())
          .then(async(meta) => {           
@@ -125,7 +125,7 @@ function MyNFT() {
   const fetchSellTokens = () =>{
     setSell([]);
     
-     data.sellingTokens.forEach(async(trade) => {   
+     data.sellingTokens.forEach((trade) => {   
         fetch(trade.uri)
          .then((response) => response.json())
          .then(async(meta) => {   
@@ -200,6 +200,7 @@ function MyNFT() {
   useEffect(() => { 
     dispatch(connect());
   }, []);
+  
   useEffect(() => {
     getApproved();  
   }, [blockchain.account]);
@@ -220,15 +221,22 @@ function MyNFT() {
     fetchSellTokens();
   }, [data.sellingTokens]);
 
-  
 //   useEffect(() => {
-// 	fetchCreatedTokens();
+//     fetchMyTokens();  
 //   }, [blockchain.account]);
 //   useEffect(() => {
-// 	fetchSellTokens();
+//     fetchWinTokens();
 //   }, [blockchain.account]);
+  useEffect(() => {
+    fetchCreatedTokens(); 
+  }, [blockchain.account]);
+  useEffect(() => {
+    fetchSellTokens(); 
+  }, [blockchain.account]);
   
 
+  
+  
   
   return (
     <s.Screen>

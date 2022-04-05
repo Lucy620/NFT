@@ -30,7 +30,6 @@ export const fetchData = (account) => {
         .getState()
         .blockchain.MarketPlace.methods.getAllTokens()
         .call();
-        
       let myTokens = await store
         .getState()
         .blockchain.MarketPlace.methods.getMyTokens(account)

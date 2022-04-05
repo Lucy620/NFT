@@ -56,7 +56,7 @@ function MyNFT() {
     setNFTS([]);
     
 	console.log('token',data.myTokens);
-    data.myTokens.forEach((nft) => { 
+    data.myTokens.forEach(async(nft) => { 
 		console.log('ntfis',nft)
         fetch(nft.uri)
          .then((response) => response.json())
@@ -104,7 +104,7 @@ function MyNFT() {
   const fetchWinTokens = () =>{
     setWin([]);
     
-     data.winTokens.forEach((auction) => {   
+     data.winTokens.forEach(async(auction) => {   
         fetch(auction.uri)
          .then((response) => response.json())
          .then(async(meta) => {           
@@ -229,6 +229,8 @@ function MyNFT() {
 //   }, [blockchain.account]);
   
 
+  
+  
   
   return (
     <s.Screen>

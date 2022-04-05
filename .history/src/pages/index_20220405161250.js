@@ -74,6 +74,27 @@ function Home () {
   const onChange2 = (value) => {
 	inputPrice = value
   }
+		   
+//   const fetchMetaDataForNFTS = () => {
+// 	  console.log('update',data.allTokens);
+// 	  setNFTS([]);  
+//       data.allTokens.forEach((nft) => {
+//         fetch(nft.uri)
+//          .then((response) => response.json())
+//          .then(async (metaData) => {
+// 			console.log('update',nft.amount)
+// 			var ether_price = await blockchain.web3.utils.fromWei(nft.price,'ether');
+//             setNFTS((prevState) => [
+//               ...prevState,
+//               { id: nft._tradeId, tokenId: nft._tokenId, metaData: metaData, price: ether_price, amount:nft.amount, auction:nft.auction },
+//             ]);
+//           }).catch((err) => {
+//             console.log(err);
+//           });
+//       });  
+    
+//     console.log(data.allTokens);
+//   };
 
   const fetchMetaDataForNFTS = () => {
 	console.log('update',data.allTokens);

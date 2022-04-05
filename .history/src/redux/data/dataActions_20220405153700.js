@@ -26,11 +26,11 @@ export const fetchData = (account) => {
   return async (dispatch) => {
     dispatch(fetchDataRequest());
     try {        
-      let allTokens = await store
+      let allTokens = store
         .getState()
         .blockchain.MarketPlace.methods.getAllTokens()
         .call();
-        
+
       let myTokens = await store
         .getState()
         .blockchain.MarketPlace.methods.getMyTokens(account)

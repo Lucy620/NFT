@@ -83,7 +83,7 @@ function MyNFT() {
   const fetchCreatedTokens = () =>{
     setNFT([]);
     
-     data.createdTokens.forEach(async(token) => {   
+     data.createdTokens.forEach((token) => {   
         fetch(token.uri)
          .then((response) => response.json())
          .then(async(meta) => {           
@@ -229,6 +229,8 @@ function MyNFT() {
 //   }, [blockchain.account]);
   
 
+  
+  
   
   return (
     <s.Screen>
