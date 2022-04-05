@@ -90,6 +90,6 @@ export const connect = () => {
 export const updateAccount = (account) => {
   return async (dispatch) => {
     dispatch(updateAccountRequest({ account: account }));
-    //dispatch(fetchData(account));
+    dispatch(fetchData(account));
   };
 };

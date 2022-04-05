@@ -80,7 +80,7 @@ function Home () {
 	setNFTS([]);  
 	data.allTokens.forEach(async(nft) => {
 	  fetch(nft.uri)
-	   .then((response) => response.json())
+	   .then(async(response) => response.json())
 	   .then(async (metaData) => {
 		  console.log('update',nft.amount)
 		  var ether_price = await blockchain.web3.utils.fromWei(nft.price,'ether');
@@ -159,9 +159,9 @@ function Home () {
   useEffect(() => { 
     dispatch(connect());
   }, []);
-  useEffect(() => { 
-	fetchMetaDataForNFTS();
-  }, [blockchain.account]);
+//   useEffect(() => { 
+// 	fetchMetaDataForNFTS();
+//   }, [blockchain.account]);
   useEffect(() => { 
     dispatch(fetchData(blockchain.account));
   }, [blockchain.MarketPlace]);

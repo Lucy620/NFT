@@ -79,22 +79,36 @@ function Home () {
 	console.log('update',data.allTokens);
 	setNFTS([]);  
 	data.allTokens.forEach(async(nft) => {
-	  fetch(nft.uri)
-	   .then((response) => response.json())
-	   .then(async (metaData) => {
-		  console.log('update',nft.amount)
-		  var ether_price = await blockchain.web3.utils.fromWei(nft.price,'ether');
-		  setNFTS((prevState) => [
-			...prevState,
-			{ id: nft._tradeId, tokenId: nft._tokenId, metaData: metaData, price: ether_price, amount:nft.amount, auction:nft.auction },
-		  ]);
-		}).catch((err) => {
-		  console.log(err);
-		});
+		var ether_price = await blockchain.web3.utils.fromWei(nft.price,'ether');
+		setNFTS((prevState) => [
+		  ...prevState,
+		  { id: nft._tradeId, tokenId: nft._tokenId, uri: nft.uri, price: ether_price, amount:nft.amount, auction:nft.auction },
+		]);
+	  
 	});  
   
   console.log(data.allTokens);
 };
+// const fetchMetaDataForNFTS = () => {
+// 	console.log('update',data.allTokens);
+// 	setNFTS([]);  
+// 	data.allTokens.forEach(async(nft) => {
+// 	  fetch(nft.uri)
+// 	   .then((response) => response.json())
+// 	   .then(async (metaData) => {
+// 		  console.log('update',nft.amount)
+// 		  var ether_price = await blockchain.web3.utils.fromWei(nft.price,'ether');
+// 		  setNFTS((prevState) => [
+// 			...prevState,
+// 			{ id: nft._tradeId, tokenId: nft._tokenId, metaData: metaData, price: ether_price, amount:nft.amount, auction:nft.auction },
+// 		  ]);
+// 		}).catch((err) => {
+// 		  console.log(err);
+// 		});
+// 	});  
+  
+//   console.log(data.allTokens);
+// };
 
 
   const buyToken = async(tradeId, price,amount) => {  
@@ -159,9 +173,9 @@ function Home () {
   useEffect(() => { 
     dispatch(connect());
   }, []);
-  useEffect(() => { 
-	fetchMetaDataForNFTS();
-  }, [blockchain.account]);
+//   useEffect(() => { 
+// 	fetchMetaDataForNFTS();
+//   }, [blockchain.account]);
   useEffect(() => { 
     dispatch(fetchData(blockchain.account));
   }, [blockchain.MarketPlace]);
@@ -198,18 +212,24 @@ function Home () {
 			 if (index < NFTS.length - 1) {
 				 id = NFTS[index + 1].id
 			 }
-            return (
-			  nft.id == id ?(<></>) : (	
+			 let metaData = [];
+			 fetch(nft.uri).then((response) => response.json()).then((meta) => {
+				 metaData = meta;
+				}).catch((err) => {
+				  console.log(err);
+			 });
+            return (		 
+			  nft.id == id ?(<></>) : (				  
 			  <Link style={{textDecoration: 'none'}} to={`/detail/${nft.tokenId}/${nft.id}`}>
 				 <Card
 					 bodyStyle={{padding:'12px'}}
 					 key={index}
 				     hoverable
 				     style={{ width: 240,margin:'48px 16px',borderRadius:'12px' }}
-				     cover={<img alt={nft.metaData.name} style={{ borderRadius:'12px 12px 0 0 ' }} src={nft.metaData.image} />}
+				     cover={<img alt={metaData.name} style={{ borderRadius:'12px 12px 0 0 ' }} src={metaData.image} />}
 				   >
 				    <div className="flex between">
-						<div className="card-name bold">{nft.metaData.name} </div>
+						<div className="card-name bold">{metaData.name} </div>
 						<div className="size12 italic">#{nft.id}</div>
 						{/* {
 							nft.auction == true ? (
@@ -224,7 +244,7 @@ function Home () {
 						nft.auction == true ? (
 							<>
 							<div className="flex between">
-								<div className="size12 card-desc">{nft.metaData.description}</div>
+								<div className="size12 card-desc">{metaData.description}</div>
 								<div className="size12 italic">
 									<div>For auction</div>
 								</div>
@@ -239,7 +259,7 @@ function Home () {
 						) : (
 							<>
 							<div className="flex between">
-								<div className="size12 card-desc">{nft.metaData.description}</div>
+								<div className="size12 card-desc">{metaData.description}</div>
 								<div className="size12 flex italic">
 									<div>
 									<img src={ethIcon} className="icon16"/>

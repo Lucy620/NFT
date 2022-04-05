@@ -159,9 +159,9 @@ function Home () {
   useEffect(() => { 
     dispatch(connect());
   }, []);
-  useEffect(() => { 
-	fetchMetaDataForNFTS();
-  }, [blockchain.account]);
+//   useEffect(() => { 
+// 	fetchMetaDataForNFTS();
+//   }, [blockchain.account]);
   useEffect(() => { 
     dispatch(fetchData(blockchain.account));
   }, [blockchain.MarketPlace]);

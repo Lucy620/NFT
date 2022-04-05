@@ -204,9 +204,6 @@ function MyNFT() {
     getApproved();  
   }, [blockchain.account]);
   useEffect(() => {
-    dispatch(fetchData(blockchain.account));
-  }, [blockchain.account]);
-  useEffect(() => {
     dispatch(fetchData(blockchain.account));   
   }, [blockchain.MarketPlace]);
   useEffect(() => {
@@ -222,14 +219,14 @@ function MyNFT() {
   useEffect(() => {
     fetchSellTokens();
   }, [data.sellingTokens]);
-  
 
-//   useEffect(() => {
-// 	fetchCreatedTokens();
-//   }, [blockchain.account]);
-//   useEffect(() => {
-// 	fetchSellTokens();
-//   }, [blockchain.account]);
+  
+  useEffect(() => {
+	fetchCreatedTokens();
+  }, [blockchain.account]);
+  useEffect(() => {
+	fetchSellTokens();
+  }, [blockchain.account]);
   
 
   

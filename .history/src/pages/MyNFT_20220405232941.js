@@ -204,9 +204,6 @@ function MyNFT() {
     getApproved();  
   }, [blockchain.account]);
   useEffect(() => {
-    dispatch(fetchData(blockchain.account));
-  }, [blockchain.account]);
-  useEffect(() => {
     dispatch(fetchData(blockchain.account));   
   }, [blockchain.MarketPlace]);
   useEffect(() => {
