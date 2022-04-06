@@ -392,21 +392,16 @@ function MyNFT() {
 										</div> */}
 							</div>
 									{trade.auction == true ?(
-										<>
 										<div className="flex between">
 											<div className="size12 card-desc">{trade.meta.description}</div>
 											<div className="size12 italic">
 									           <div>For auction</div>
 								            </div>
-											
+											<div className="flex size12 italic">
+												<img src={amountIcon} className="icon16"/>
+												<div>{trade.amount} </div>
+											</div>
 										</div>
-										<div className="flex end">
-										<div className="size12 flex italic">
-											<img src={amountIcon} className="icon16"/>
-											<div>{trade.amount} </div>
-										</div>
-									    </div>
-									    </>
 									):(
 										<>
 										<div className="flex between">
