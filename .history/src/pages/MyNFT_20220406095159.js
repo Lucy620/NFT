@@ -207,6 +207,9 @@ function MyNFT() {
     dispatch(fetchData(blockchain.account));
   }, [blockchain.account]);
   useEffect(() => {
+    dispatch(fetchData(blockchain.account));   
+  }, []);
+  useEffect(() => {
 	console.log('fetchMyTokens')
     fetchMyTokens(); 
   }, [data.myTokens]);
@@ -219,6 +222,15 @@ function MyNFT() {
   useEffect(() => {
     fetchSellTokens();
   }, [data.sellingTokens]);
+  
+
+//   useEffect(() => {
+// 	fetchCreatedTokens();
+//   }, [blockchain.account]);
+//   useEffect(() => {
+// 	fetchSellTokens();
+//   }, [blockchain.account]);
+  
 
   
   return (

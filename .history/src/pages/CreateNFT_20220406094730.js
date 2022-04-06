@@ -129,10 +129,10 @@ function CreateNFT() {
     dispatch(connect());
   }, []);
 
-  // useEffect(() => { 
-	//   console.log('dispatch')
-  //   dispatch(fetchData(blockchain.account));
-  // }, [blockchain.nft]);
+  useEffect(() => { 
+	  console.log('dispatch')
+    dispatch(fetchData(blockchain.account));
+  }, [blockchain.nft]);
 
   
 
