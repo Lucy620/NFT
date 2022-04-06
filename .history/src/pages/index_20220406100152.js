@@ -346,9 +346,7 @@ function Home () {
 	  	</Form> 
 	  </Modal>
       </s.Container>
-	
     )}  
-
     
     </s.Screen>
   );

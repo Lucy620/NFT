@@ -274,7 +274,7 @@ function MyNFT() {
 						       >
 						       <div className="flex between">
 						        <div className="card-name bold">{nft.metaData.name}</div>
-								<div className="size12 italic">No. {nft.id}</div>
+								<div className="size12 italic">#{nft.id}</div>
 						       </div>
 						       <div className="flex between">
 						        <div className="size12 card-desc">{nft.metaData.description}</div>

@@ -188,6 +188,7 @@ function Home () {
           ) : null}
         </s.Container>
       ) : (
+	   {NFTS} == [] ? (<></>):(
        <s.Container>
        <s.flex_container> 
          {NFTS.map((nft, index) => {
@@ -346,7 +347,7 @@ function Home () {
 	  	</Form> 
 	  </Modal>
       </s.Container>
-	
+	   )
     )}  
 
     

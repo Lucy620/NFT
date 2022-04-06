@@ -77,7 +77,7 @@ function Home () {
 
   const fetchMetaDataForNFTS = () => {
 	console.log('update',data.allTokens);
-	setNFTS([]);  
+	//setNFTS([]);  
 	data.allTokens.forEach(async(nft) => {
 	  fetch(nft.uri)
 	   .then((response) => response.json())
@@ -346,9 +346,7 @@ function Home () {
 	  	</Form> 
 	  </Modal>
       </s.Container>
-	
     )}  
-
     
     </s.Screen>
   );
