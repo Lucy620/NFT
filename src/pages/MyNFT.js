@@ -334,12 +334,14 @@ function MyNFT() {
 									 <div className="size12 italic">#{auction.id}</div>
 				 				</div>
 				 				<div className="flex between">
-				 					<div className="size12 card-desc">{auction.meta.description}</div>
-				 					<div className="flex size12 italic">
-											<img src={ethIcon} className="icon16"/>
-										</div>
-										<div>{auction.price} MATIC</div>
-				 				</div>
+											<div className="size12 card-desc">{auction.meta.description}</div>
+											<div className="flex size12 italic">
+												<div>
+												<img src={ethIcon} className="icon18"/>
+												</div>
+												<div>{auction.price} MATIC</div>
+											</div>
+								</div>
 				 				<div className="flex end">
 				 					<div className="size12 flex italic">
 				 						<img src={amountIcon} className="icon16"/>
@@ -384,14 +386,6 @@ function MyNFT() {
 							<div className="flex between">
 								<div className="card-name bold">{trade.meta.name}</div>
 								<div className="size12 italic">#{trade.id}</div>
-										{/* <div className="size12 italic">
-										{trade.auction == true ?(
-											<div>For auction</div>
-										):(
-											<div>Price</div>
-										)}
-											
-										</div> */}
 							</div>
 									{trade.auction == true ?(
 										<>
@@ -415,7 +409,7 @@ function MyNFT() {
 											<div className="size12 card-desc">{trade.meta.description}</div>
 											<div className="flex size12 italic">
 												<div>
-												<img src={ethIcon} className="icon16"/>
+												<img src={ethIcon} className="icon18"/>
 												</div>
 												<div>{trade.price} MATIC</div>
 											</div>

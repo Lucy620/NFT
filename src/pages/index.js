@@ -223,7 +223,7 @@ function Home () {
 								<div className="size12 card-desc">{nft.metaData.description}</div>
 								<div className="size12 flex italic">
 									<div>
-									<img src={ethIcon} className="icon16"/>
+									<img src={ethIcon} className="icon18"/>
 									</div>
 									<div>{nft.price} MATIC</div>
 								</div>
