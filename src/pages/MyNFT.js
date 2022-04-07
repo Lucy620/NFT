@@ -335,10 +335,10 @@ function MyNFT() {
 				 				</div>
 				 				<div className="flex between">
 				 					<div className="size12 card-desc">{auction.meta.description}</div>
-				 					<div>
-												<img src={ethIcon} className="icon16"/>
-												</div>
-												<div>{auction.price} MATIC</div>
+				 					<div className="flex size12 italic">
+											<img src={ethIcon} className="icon16"/>
+										</div>
+										<div>{auction.price} MATIC</div>
 				 				</div>
 				 				<div className="flex end">
 				 					<div className="size12 flex italic">
