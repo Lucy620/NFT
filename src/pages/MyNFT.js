@@ -146,17 +146,27 @@ function MyNFT() {
   }
 
   const allowBuy = async(id, price, amount, auction, time) => {
-    await blockchain.MarketPlace.methods.publicToAll(id, price, amount, auction, time)
-    .send({from: blockchain.account})
-    .once("error", (err) => {
-      console.log(err);
-    }).then(() => {
-      console.log('Open token')
-	  dispatch(fetchData(blockchain.account));  
-	  fetchMyTokens(); 
-      fetchWinTokens();
-      fetchSellTokens();
-    })  
+	var _amount = await blockchain.nft.methods.balanceOf(blockchain.account,id).call();
+	if(_amount >= amount){
+		blockchain.MarketPlace.methods.publicToAll(id, price, amount, auction, time)
+		.send({from: blockchain.account})
+		.once("error", (err) => {
+		  console.log(err);
+		  alert("Failed!")
+		}).then(() => {
+		  console.log('Open token')
+		  alert("Success!")
+		  dispatch(fetchData(blockchain.account));  
+		  fetchMyTokens(); 
+		  fetchWinTokens();
+		  fetchSellTokens();
+		  
+		})  
+
+	}else{
+		alert("Not enough supply");
+	}
+    
     
   }
 
