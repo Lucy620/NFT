@@ -71,13 +71,13 @@ const DetailPage = () => {
 	    title: 'From',
 	    dataIndex: 'seller',
 	    key: 'seller',
-		width: 400,
+		width: 300,
 	  },
 	  {
 	    title: 'To',
 	    dataIndex: 'buyer',
 	    key: 'buyer',
-		width: 400,
+		width: 300,
 	  },
 	  {
 	    title: 'Description',
