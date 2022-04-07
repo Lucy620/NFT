@@ -66,6 +66,11 @@ const DetailPage = () => {
 	    title: '#',
 	    dataIndex: 'key',
 	    key: 'key',
+		sorter: {
+			compare: (a, b) => a.key - b.key,
+			multiple: 1,
+		  },
+		sortDirections: ['descend'],
 	  },
 	  {
 	    title: 'From',
