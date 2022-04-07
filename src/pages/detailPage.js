@@ -71,11 +71,13 @@ const DetailPage = () => {
 	    title: 'From',
 	    dataIndex: 'seller',
 	    key: 'seller',
+		width: 400,
 	  },
 	  {
 	    title: 'To',
 	    dataIndex: 'buyer',
 	    key: 'buyer',
+		width: 400,
 	  },
 	  {
 	    title: 'Description',
@@ -406,7 +408,7 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
         <s.Container style={{marginLeft:"0",marginRight:"25px",marginBottom:"100px"}}>
 			<div className="item-title">Transaction History</div>
 			<div className="left24 top24">
-				<Table dataSource={record} columns={columns} pagination={false}/>
+				<Table dataSource={record} columns={columns} pagination={{ pageSize: 10 }} scroll={{ y: 400 }}/>
 			</div>
 			
 			<Modal
