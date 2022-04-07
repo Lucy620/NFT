@@ -506,7 +506,7 @@ function MyNFT() {
 		             }else{
 					   console.log(values.price);
 					   var wei_price =  await blockchain.web3.utils.toWei(values.price.toString(),'ether');
-		               allowBuy(processingID, wei_price, values.amount, false, 0);
+		               allowBuy(processingID, wei_price, values._amount, false, 0);
 		             }
 		           })
 		           .catch(info => {
@@ -515,7 +515,7 @@ function MyNFT() {
 		       }}
 		  onCancel={handleClose}
 			>
-			 <Form {...formItemLayout} form={form} initialValues={{amount:1}}>
+			 <Form {...formItemLayout} form={form} initialValues={{amount:1, _amount:1}}>
 			   <Form.Item label="Auction">
 			        <Radio.Group onChange={handleSelectChange} value={select}>
 			            <Radio value="true">Yes</Radio>
@@ -528,7 +528,7 @@ function MyNFT() {
 				      <DateTimePicker onChange={onChange} value={value} minDate={new Date()}/>
 				  </Form.Item>
 				 <Form.Item label="Amount" name="amount">
-				      <InputNumber style={{ width: 200 }} min="1" disabled  name="amount"  placeholder="Enter amount"/>
+				      <InputNumber style={{ width: 200 }} min="1" max="1" disabled  name="amount"  placeholder="Enter amount"/>
 				 </Form.Item>
 				</>
 			 ):(
@@ -536,8 +536,8 @@ function MyNFT() {
 				<Form.Item label="Price(MATIC)" name="price" rules={[{ required: true }]}>
 				     <InputNumber style={{ width: 200 }} min="0" name="price" id="price"   placeholder="Enter your price"/>
 				</Form.Item>
-				<Form.Item label="Amount" name="amount" rules={[{ required: true }]}>
-				     <InputNumber style={{ width: 200 }} min="1"  name="amount"  placeholder="Enter amount"/>
+				<Form.Item label="Amount" name="_amount" rules={[{ required: true }]}>
+				     <InputNumber style={{ width: 200 }} min="1"  name="_amount"  placeholder="Enter amount"/>
 				</Form.Item>
 				</>
 			 )}
