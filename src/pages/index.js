@@ -217,23 +217,7 @@ function Home () {
 						} */}
 						
 					</div>
-					{
-						nft.auction == true ? (
-							<>
-							<div className="flex between">
-								<div className="size12 card-desc">{nft.metaData.description}</div>
-								<div className="size12 italic">
-									<div>For auction</div>
-								</div>
-							</div>
-							<div className="flex end">
-								<div className="size12 flex italic">
-									<img src={amountIcon} className="icon16"/>
-									<div>{nft.amount} </div>
-								</div>
-							</div>
-							</>
-						) : (
+				
 							<>
 							<div className="flex between">
 								<div className="size12 card-desc">{nft.metaData.description}</div>
@@ -251,8 +235,7 @@ function Home () {
 								</div>
 							</div>
 							</>
-						)
-					}
+					
 					<div className="flex top24 end">
 						<Button size="small"><Link style={{textDecoration: 'none'}} to={`/detail/${nft.tokenId}/${nft.id}`}>Details</Link></Button>
 						 {nft.auction == true ? (
