@@ -107,10 +107,11 @@ function MyNFT() {
      data.winTokens.forEach(async(auction) => {   
         fetch(auction.uri)
          .then((response) => response.json())
-         .then(async(meta) => {           
+         .then(async(meta) => { 
+			var ether_price = await blockchain.web3.utils.fromWei(auction.price,'ether')           
            setWin((prevState) => [
               ...prevState,
-              { id: auction._tradeId, tokenId: auction._tokenId, meta: meta, amount: 1},
+              { id: auction._tradeId, tokenId: auction._tokenId, meta: meta, amount: 1, price: ether_price},
             ]);     
             }).catch((err) => {
               console.log(err);
@@ -334,9 +335,10 @@ function MyNFT() {
 				 				</div>
 				 				<div className="flex between">
 				 					<div className="size12 card-desc">{auction.meta.description}</div>
-				 					<div className="size12 italic">
-				 						<div>Owned Amount</div>
-				 					</div>
+				 					<div>
+												<img src={ethIcon} className="icon16"/>
+												</div>
+												<div>{auction.price} MATIC</div>
 				 				</div>
 				 				<div className="flex end">
 				 					<div className="size12 flex italic">
