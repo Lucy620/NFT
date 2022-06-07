@@ -528,7 +528,7 @@ function MyNFT() {
 				      <DateTimePicker onChange={onChange} value={value} minDate={new Date()}/>
 				  </Form.Item>
 				 <Form.Item label="Amount" name="amount">
-				      <InputNumber style={{ width: 200 }} min="1" max="1" disabled  name="amount"  placeholder="Enter amount"/>
+				      <InputNumber style={{ width: 200 }} value="1" disabled  name="amount"  placeholder="Enter amount"/>
 				 </Form.Item>
 				</>
 			 ):(
